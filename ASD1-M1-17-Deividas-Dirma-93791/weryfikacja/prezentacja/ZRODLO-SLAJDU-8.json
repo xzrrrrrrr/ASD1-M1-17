@@ -1,0 +1,2050 @@
+{
+  "data": "2026-10-26",
+  "wykonawca": "agent OpenClaw",
+  "browser": "firefox",
+  "wersja": "151.0.2",
+  "metoda": "file://; HTTP/HTTPS przez proxy 127.0.0.1:9 (zamknięty port); brak zmian aplikacji",
+  "statusStronyTestow": "PASS 46, FAIL 0",
+  "testy": {
+    "pass": 46,
+    "fail": 0,
+    "wyniki": [
+      {
+        "nazwa": "Puste wejście",
+        "wejscie": [],
+        "oczekiwane": {
+          "pary": 0,
+          "pokrycie": [],
+          "dlugosc": 0,
+          "maksimum": 0,
+          "odcinki": [],
+          "jednostki": {
+            "maksimum": 0,
+            "odcinki": []
+          }
+        },
+        "rzeczywiste": {
+          "pary": 0,
+          "pokrycie": [],
+          "dlugosc": 0,
+          "maksimum": 0,
+          "odcinki": [],
+          "jednostki": {
+            "maksimum": 0,
+            "odcinki": []
+          }
+        },
+        "status": "PASS"
+      },
+      {
+        "nazwa": "Jeden przedział",
+        "wejscie": [
+          {
+            "id": "P1",
+            "start": 1,
+            "end": 4
+          }
+        ],
+        "oczekiwane": {
+          "pary": 0,
+          "pokrycie": [
+            {
+              "start": 1,
+              "end": 4
+            }
+          ],
+          "dlugosc": 3,
+          "maksimum": 1,
+          "odcinki": [
+            {
+              "start": 1,
+              "end": 4
+            }
+          ],
+          "jednostki": {
+            "maksimum": 1,
+            "odcinki": [
+              {
+                "start": 1,
+                "end": 4
+              }
+            ]
+          }
+        },
+        "rzeczywiste": {
+          "pary": 0,
+          "pokrycie": [
+            {
+              "start": 1,
+              "end": 4
+            }
+          ],
+          "dlugosc": 3,
+          "maksimum": 1,
+          "odcinki": [
+            {
+              "start": 1,
+              "end": 4
+            }
+          ],
+          "jednostki": {
+            "maksimum": 1,
+            "odcinki": [
+              {
+                "start": 1,
+                "end": 4
+              }
+            ]
+          }
+        },
+        "status": "PASS"
+      },
+      {
+        "nazwa": "Dwa nakładające",
+        "wejscie": [
+          {
+            "id": "P1",
+            "start": 1,
+            "end": 4
+          },
+          {
+            "id": "P2",
+            "start": 2,
+            "end": 5
+          }
+        ],
+        "oczekiwane": {
+          "pary": 1,
+          "pokrycie": [
+            {
+              "start": 1,
+              "end": 5
+            }
+          ],
+          "dlugosc": 4,
+          "maksimum": 2,
+          "odcinki": [
+            {
+              "start": 2,
+              "end": 4
+            }
+          ],
+          "jednostki": {
+            "maksimum": 2,
+            "odcinki": [
+              {
+                "start": 2,
+                "end": 4
+              }
+            ]
+          }
+        },
+        "rzeczywiste": {
+          "pary": 1,
+          "pokrycie": [
+            {
+              "start": 1,
+              "end": 5
+            }
+          ],
+          "dlugosc": 4,
+          "maksimum": 2,
+          "odcinki": [
+            {
+              "start": 2,
+              "end": 4
+            }
+          ],
+          "jednostki": {
+            "maksimum": 2,
+            "odcinki": [
+              {
+                "start": 2,
+                "end": 4
+              }
+            ]
+          }
+        },
+        "status": "PASS"
+      },
+      {
+        "nazwa": "Stykanie bez konfliktu",
+        "wejscie": [
+          {
+            "id": "P1",
+            "start": 2,
+            "end": 5
+          },
+          {
+            "id": "P2",
+            "start": 5,
+            "end": 8
+          }
+        ],
+        "oczekiwane": {
+          "pary": 0,
+          "pokrycie": [
+            {
+              "start": 2,
+              "end": 8
+            }
+          ],
+          "dlugosc": 6,
+          "maksimum": 1,
+          "odcinki": [
+            {
+              "start": 2,
+              "end": 8
+            }
+          ],
+          "jednostki": {
+            "maksimum": 1,
+            "odcinki": [
+              {
+                "start": 2,
+                "end": 8
+              }
+            ]
+          }
+        },
+        "rzeczywiste": {
+          "pary": 0,
+          "pokrycie": [
+            {
+              "start": 2,
+              "end": 8
+            }
+          ],
+          "dlugosc": 6,
+          "maksimum": 1,
+          "odcinki": [
+            {
+              "start": 2,
+              "end": 8
+            }
+          ],
+          "jednostki": {
+            "maksimum": 1,
+            "odcinki": [
+              {
+                "start": 2,
+                "end": 8
+              }
+            ]
+          }
+        },
+        "status": "PASS"
+      },
+      {
+        "nazwa": "Przykład z opisu w rozmowie",
+        "wejscie": [
+          {
+            "id": "P1",
+            "start": 1,
+            "end": 4
+          },
+          {
+            "id": "P2",
+            "start": 2,
+            "end": 5
+          },
+          {
+            "id": "P3",
+            "start": 5,
+            "end": 7
+          }
+        ],
+        "oczekiwane": {
+          "pary": 1,
+          "pokrycie": [
+            {
+              "start": 1,
+              "end": 7
+            }
+          ],
+          "dlugosc": 6,
+          "maksimum": 2,
+          "odcinki": [
+            {
+              "start": 2,
+              "end": 4
+            }
+          ],
+          "jednostki": {
+            "maksimum": 2,
+            "odcinki": [
+              {
+                "start": 2,
+                "end": 4
+              }
+            ]
+          }
+        },
+        "rzeczywiste": {
+          "pary": 1,
+          "pokrycie": [
+            {
+              "start": 1,
+              "end": 7
+            }
+          ],
+          "dlugosc": 6,
+          "maksimum": 2,
+          "odcinki": [
+            {
+              "start": 2,
+              "end": 4
+            }
+          ],
+          "jednostki": {
+            "maksimum": 2,
+            "odcinki": [
+              {
+                "start": 2,
+                "end": 4
+              }
+            ]
+          }
+        },
+        "status": "PASS"
+      },
+      {
+        "nazwa": "Identyczne granice, różne ID",
+        "wejscie": [
+          {
+            "id": "P1",
+            "start": 2,
+            "end": 5
+          },
+          {
+            "id": "P2",
+            "start": 2,
+            "end": 5
+          }
+        ],
+        "oczekiwane": {
+          "pary": 1,
+          "pokrycie": [
+            {
+              "start": 2,
+              "end": 5
+            }
+          ],
+          "dlugosc": 3,
+          "maksimum": 2,
+          "odcinki": [
+            {
+              "start": 2,
+              "end": 5
+            }
+          ],
+          "jednostki": {
+            "maksimum": 2,
+            "odcinki": [
+              {
+                "start": 2,
+                "end": 5
+              }
+            ]
+          }
+        },
+        "rzeczywiste": {
+          "pary": 1,
+          "pokrycie": [
+            {
+              "start": 2,
+              "end": 5
+            }
+          ],
+          "dlugosc": 3,
+          "maksimum": 2,
+          "odcinki": [
+            {
+              "start": 2,
+              "end": 5
+            }
+          ],
+          "jednostki": {
+            "maksimum": 2,
+            "odcinki": [
+              {
+                "start": 2,
+                "end": 5
+              }
+            ]
+          }
+        },
+        "status": "PASS"
+      },
+      {
+        "nazwa": "Pełne zagnieżdżenie",
+        "wejscie": [
+          {
+            "id": "P1",
+            "start": 0,
+            "end": 10
+          },
+          {
+            "id": "P2",
+            "start": 2,
+            "end": 8
+          },
+          {
+            "id": "P3",
+            "start": 3,
+            "end": 4
+          }
+        ],
+        "oczekiwane": {
+          "pary": 3,
+          "pokrycie": [
+            {
+              "start": 0,
+              "end": 10
+            }
+          ],
+          "dlugosc": 10,
+          "maksimum": 3,
+          "odcinki": [
+            {
+              "start": 3,
+              "end": 4
+            }
+          ],
+          "jednostki": {
+            "maksimum": 3,
+            "odcinki": [
+              {
+                "start": 3,
+                "end": 4
+              }
+            ]
+          }
+        },
+        "rzeczywiste": {
+          "pary": 3,
+          "pokrycie": [
+            {
+              "start": 0,
+              "end": 10
+            }
+          ],
+          "dlugosc": 10,
+          "maksimum": 3,
+          "odcinki": [
+            {
+              "start": 3,
+              "end": 4
+            }
+          ],
+          "jednostki": {
+            "maksimum": 3,
+            "odcinki": [
+              {
+                "start": 3,
+                "end": 4
+              }
+            ]
+          }
+        },
+        "status": "PASS"
+      },
+      {
+        "nazwa": "Wspólny czas końców i początków",
+        "wejscie": [
+          {
+            "id": "P1",
+            "start": 0,
+            "end": 5
+          },
+          {
+            "id": "P2",
+            "start": 1,
+            "end": 5
+          },
+          {
+            "id": "P3",
+            "start": 5,
+            "end": 8
+          },
+          {
+            "id": "P4",
+            "start": 5,
+            "end": 9
+          }
+        ],
+        "oczekiwane": {
+          "pary": 2,
+          "pokrycie": [
+            {
+              "start": 0,
+              "end": 9
+            }
+          ],
+          "dlugosc": 9,
+          "maksimum": 2,
+          "odcinki": [
+            {
+              "start": 1,
+              "end": 8
+            }
+          ],
+          "jednostki": {
+            "maksimum": 2,
+            "odcinki": [
+              {
+                "start": 1,
+                "end": 8
+              }
+            ]
+          }
+        },
+        "rzeczywiste": {
+          "pary": 2,
+          "pokrycie": [
+            {
+              "start": 0,
+              "end": 9
+            }
+          ],
+          "dlugosc": 9,
+          "maksimum": 2,
+          "odcinki": [
+            {
+              "start": 1,
+              "end": 8
+            }
+          ],
+          "jednostki": {
+            "maksimum": 2,
+            "odcinki": [
+              {
+                "start": 1,
+                "end": 8
+              }
+            ]
+          }
+        },
+        "status": "PASS"
+      },
+      {
+        "nazwa": "Dwa oddzielne maksima",
+        "wejscie": [
+          {
+            "id": "P1",
+            "start": 1,
+            "end": 3
+          },
+          {
+            "id": "P2",
+            "start": 2,
+            "end": 4
+          },
+          {
+            "id": "P3",
+            "start": 6,
+            "end": 8
+          },
+          {
+            "id": "P4",
+            "start": 7,
+            "end": 9
+          }
+        ],
+        "oczekiwane": {
+          "pary": 2,
+          "pokrycie": [
+            {
+              "start": 1,
+              "end": 4
+            },
+            {
+              "start": 6,
+              "end": 9
+            }
+          ],
+          "dlugosc": 6,
+          "maksimum": 2,
+          "odcinki": [
+            {
+              "start": 2,
+              "end": 3
+            },
+            {
+              "start": 7,
+              "end": 8
+            }
+          ],
+          "jednostki": {
+            "maksimum": 2,
+            "odcinki": [
+              {
+                "start": 2,
+                "end": 3
+              },
+              {
+                "start": 7,
+                "end": 8
+              }
+            ]
+          }
+        },
+        "rzeczywiste": {
+          "pary": 2,
+          "pokrycie": [
+            {
+              "start": 1,
+              "end": 4
+            },
+            {
+              "start": 6,
+              "end": 9
+            }
+          ],
+          "dlugosc": 6,
+          "maksimum": 2,
+          "odcinki": [
+            {
+              "start": 2,
+              "end": 3
+            },
+            {
+              "start": 7,
+              "end": 8
+            }
+          ],
+          "jednostki": {
+            "maksimum": 2,
+            "odcinki": [
+              {
+                "start": 2,
+                "end": 3
+              },
+              {
+                "start": 7,
+                "end": 8
+              }
+            ]
+          }
+        },
+        "status": "PASS"
+      },
+      {
+        "nazwa": "Granice 0 i 100",
+        "wejscie": [
+          {
+            "id": "P1",
+            "start": 0,
+            "end": 100
+          },
+          {
+            "id": "P2",
+            "start": 99,
+            "end": 100
+          }
+        ],
+        "oczekiwane": {
+          "pary": 1,
+          "pokrycie": [
+            {
+              "start": 0,
+              "end": 100
+            }
+          ],
+          "dlugosc": 100,
+          "maksimum": 2,
+          "odcinki": [
+            {
+              "start": 99,
+              "end": 100
+            }
+          ],
+          "jednostki": {
+            "maksimum": 2,
+            "odcinki": [
+              {
+                "start": 99,
+                "end": 100
+              }
+            ]
+          }
+        },
+        "rzeczywiste": {
+          "pary": 1,
+          "pokrycie": [
+            {
+              "start": 0,
+              "end": 100
+            }
+          ],
+          "dlugosc": 100,
+          "maksimum": 2,
+          "odcinki": [
+            {
+              "start": 99,
+              "end": 100
+            }
+          ],
+          "jednostki": {
+            "maksimum": 2,
+            "odcinki": [
+              {
+                "start": 99,
+                "end": 100
+              }
+            ]
+          }
+        },
+        "status": "PASS"
+      },
+      {
+        "nazwa": "Wejście nieposortowane",
+        "wejscie": [
+          {
+            "id": "P1",
+            "start": 8,
+            "end": 10
+          },
+          {
+            "id": "P2",
+            "start": 1,
+            "end": 3
+          },
+          {
+            "id": "P3",
+            "start": 3,
+            "end": 8
+          }
+        ],
+        "oczekiwane": {
+          "pary": 0,
+          "pokrycie": [
+            {
+              "start": 1,
+              "end": 10
+            }
+          ],
+          "dlugosc": 9,
+          "maksimum": 1,
+          "odcinki": [
+            {
+              "start": 1,
+              "end": 10
+            }
+          ],
+          "jednostki": {
+            "maksimum": 1,
+            "odcinki": [
+              {
+                "start": 1,
+                "end": 10
+              }
+            ]
+          }
+        },
+        "rzeczywiste": {
+          "pary": 0,
+          "pokrycie": [
+            {
+              "start": 1,
+              "end": 10
+            }
+          ],
+          "dlugosc": 9,
+          "maksimum": 1,
+          "odcinki": [
+            {
+              "start": 1,
+              "end": 10
+            }
+          ],
+          "jednostki": {
+            "maksimum": 1,
+            "odcinki": [
+              {
+                "start": 1,
+                "end": 10
+              }
+            ]
+          }
+        },
+        "status": "PASS"
+      },
+      {
+        "nazwa": "Walidacja: start = end",
+        "wejscie": [
+          {
+            "id": "A",
+            "start": 4,
+            "end": 4
+          }
+        ],
+        "oczekiwane": true,
+        "rzeczywiste": true,
+        "status": "PASS"
+      },
+      {
+        "nazwa": "Walidacja: start > end",
+        "wejscie": [
+          {
+            "id": "A",
+            "start": 5,
+            "end": 4
+          }
+        ],
+        "oczekiwane": true,
+        "rzeczywiste": true,
+        "status": "PASS"
+      },
+      {
+        "nazwa": "Walidacja: Brak ID",
+        "wejscie": [
+          {
+            "start": 1,
+            "end": 2
+          }
+        ],
+        "oczekiwane": true,
+        "rzeczywiste": true,
+        "status": "PASS"
+      },
+      {
+        "nazwa": "Walidacja: Puste ID",
+        "wejscie": [
+          {
+            "id": " ",
+            "start": 1,
+            "end": 2
+          }
+        ],
+        "oczekiwane": true,
+        "rzeczywiste": true,
+        "status": "PASS"
+      },
+      {
+        "nazwa": "Walidacja: Powtórzone ID",
+        "wejscie": [
+          {
+            "id": "A",
+            "start": 1,
+            "end": 2
+          },
+          {
+            "id": "A",
+            "start": 2,
+            "end": 3
+          }
+        ],
+        "oczekiwane": true,
+        "rzeczywiste": true,
+        "status": "PASS"
+      },
+      {
+        "nazwa": "Walidacja: Liczbowe ID",
+        "wejscie": [
+          {
+            "id": 1,
+            "start": 1,
+            "end": 2
+          }
+        ],
+        "oczekiwane": true,
+        "rzeczywiste": true,
+        "status": "PASS"
+      },
+      {
+        "nazwa": "Walidacja: Skrajne spacje ID",
+        "wejscie": [
+          {
+            "id": " A",
+            "start": 1,
+            "end": 2
+          }
+        ],
+        "oczekiwane": true,
+        "rzeczywiste": true,
+        "status": "PASS"
+      },
+      {
+        "nazwa": "Walidacja: Start ujemny",
+        "wejscie": [
+          {
+            "id": "A",
+            "start": -1,
+            "end": 2
+          }
+        ],
+        "oczekiwane": true,
+        "rzeczywiste": true,
+        "status": "PASS"
+      },
+      {
+        "nazwa": "Walidacja: Koniec powyżej 100",
+        "wejscie": [
+          {
+            "id": "A",
+            "start": 1,
+            "end": 101
+          }
+        ],
+        "oczekiwane": true,
+        "rzeczywiste": true,
+        "status": "PASS"
+      },
+      {
+        "nazwa": "Walidacja: Ułamek",
+        "wejscie": [
+          {
+            "id": "A",
+            "start": 1.5,
+            "end": 2
+          }
+        ],
+        "oczekiwane": true,
+        "rzeczywiste": true,
+        "status": "PASS"
+      },
+      {
+        "nazwa": "Walidacja: Napis zamiast liczby",
+        "wejscie": [
+          {
+            "id": "A",
+            "start": "1",
+            "end": 2
+          }
+        ],
+        "oczekiwane": true,
+        "rzeczywiste": true,
+        "status": "PASS"
+      },
+      {
+        "nazwa": "Walidacja: null zamiast przedziału",
+        "wejscie": [
+          null
+        ],
+        "oczekiwane": true,
+        "rzeczywiste": true,
+        "status": "PASS"
+      },
+      {
+        "nazwa": "Walidacja: Brak tablicy",
+        "wejscie": null,
+        "oczekiwane": true,
+        "rzeczywiste": true,
+        "status": "PASS"
+      },
+      {
+        "nazwa": "Walidacja: NaN",
+        "wejscie": [
+          {
+            "id": "A",
+            "start": null,
+            "end": 2
+          }
+        ],
+        "oczekiwane": true,
+        "rzeczywiste": true,
+        "status": "PASS"
+      },
+      {
+        "nazwa": "Walidacja: Infinity",
+        "wejscie": [
+          {
+            "id": "A",
+            "start": 1,
+            "end": null
+          }
+        ],
+        "oczekiwane": true,
+        "rzeczywiste": true,
+        "status": "PASS"
+      },
+      {
+        "nazwa": "30 przedziałów poprawnych",
+        "wejscie": [
+          {
+            "id": "P0",
+            "start": 0,
+            "end": 100
+          },
+          {
+            "id": "P1",
+            "start": 0,
+            "end": 100
+          },
+          {
+            "id": "P2",
+            "start": 0,
+            "end": 100
+          },
+          {
+            "id": "P3",
+            "start": 0,
+            "end": 100
+          },
+          {
+            "id": "P4",
+            "start": 0,
+            "end": 100
+          },
+          {
+            "id": "P5",
+            "start": 0,
+            "end": 100
+          },
+          {
+            "id": "P6",
+            "start": 0,
+            "end": 100
+          },
+          {
+            "id": "P7",
+            "start": 0,
+            "end": 100
+          },
+          {
+            "id": "P8",
+            "start": 0,
+            "end": 100
+          },
+          {
+            "id": "P9",
+            "start": 0,
+            "end": 100
+          },
+          {
+            "id": "P10",
+            "start": 0,
+            "end": 100
+          },
+          {
+            "id": "P11",
+            "start": 0,
+            "end": 100
+          },
+          {
+            "id": "P12",
+            "start": 0,
+            "end": 100
+          },
+          {
+            "id": "P13",
+            "start": 0,
+            "end": 100
+          },
+          {
+            "id": "P14",
+            "start": 0,
+            "end": 100
+          },
+          {
+            "id": "P15",
+            "start": 0,
+            "end": 100
+          },
+          {
+            "id": "P16",
+            "start": 0,
+            "end": 100
+          },
+          {
+            "id": "P17",
+            "start": 0,
+            "end": 100
+          },
+          {
+            "id": "P18",
+            "start": 0,
+            "end": 100
+          },
+          {
+            "id": "P19",
+            "start": 0,
+            "end": 100
+          },
+          {
+            "id": "P20",
+            "start": 0,
+            "end": 100
+          },
+          {
+            "id": "P21",
+            "start": 0,
+            "end": 100
+          },
+          {
+            "id": "P22",
+            "start": 0,
+            "end": 100
+          },
+          {
+            "id": "P23",
+            "start": 0,
+            "end": 100
+          },
+          {
+            "id": "P24",
+            "start": 0,
+            "end": 100
+          },
+          {
+            "id": "P25",
+            "start": 0,
+            "end": 100
+          },
+          {
+            "id": "P26",
+            "start": 0,
+            "end": 100
+          },
+          {
+            "id": "P27",
+            "start": 0,
+            "end": 100
+          },
+          {
+            "id": "P28",
+            "start": 0,
+            "end": 100
+          },
+          {
+            "id": "P29",
+            "start": 0,
+            "end": 100
+          },
+          {
+            "id": "P30",
+            "start": 0,
+            "end": 100
+          }
+        ],
+        "oczekiwane": [],
+        "rzeczywiste": [],
+        "status": "PASS"
+      },
+      {
+        "nazwa": "30 identycznych przedziałów",
+        "wejscie": "30 x [0,100)",
+        "oczekiwane": {
+          "pary": 435,
+          "maksimum": 30
+        },
+        "rzeczywiste": {
+          "pary": 435,
+          "maksimum": 30
+        },
+        "status": "PASS"
+      },
+      {
+        "nazwa": "31 przedziałów odrzuconych",
+        "wejscie": "31 x [0,100)",
+        "oczekiwane": true,
+        "rzeczywiste": true,
+        "status": "PASS"
+      },
+      {
+        "nazwa": "Walidacja pustej tablicy",
+        "wejscie": [],
+        "oczekiwane": [],
+        "rzeczywiste": [],
+        "status": "PASS"
+      },
+      {
+        "nazwa": "Stan pośredni konfliktu",
+        "wejscie": [
+          {
+            "id": "P1",
+            "start": 1,
+            "end": 4
+          },
+          {
+            "id": "P2",
+            "start": 2,
+            "end": 5
+          },
+          {
+            "id": "P3",
+            "start": 5,
+            "end": 7
+          }
+        ],
+        "oczekiwane": {
+          "i": 0,
+          "j": 1,
+          "lewa": 2,
+          "prawa": 4,
+          "konflikt": true
+        },
+        "rzeczywiste": {
+          "i": 0,
+          "j": 1,
+          "lewa": 2,
+          "prawa": 4,
+          "konflikt": true
+        },
+        "status": "PASS"
+      },
+      {
+        "nazwa": "Stany pośrednie: końce przed początkami",
+        "wejscie": [
+          {
+            "id": "P1",
+            "start": 2,
+            "end": 5
+          },
+          {
+            "id": "P2",
+            "start": 5,
+            "end": 8
+          }
+        ],
+        "oczekiwane": [
+          {
+            "zmiana": -1,
+            "przed": 1,
+            "aktywne": 0
+          },
+          {
+            "zmiana": 1,
+            "przed": 0,
+            "aktywne": 1
+          }
+        ],
+        "rzeczywiste": [
+          {
+            "zmiana": -1,
+            "przed": 1,
+            "aktywne": 0
+          },
+          {
+            "zmiana": 1,
+            "przed": 0,
+            "aktywne": 1
+          }
+        ],
+        "status": "PASS"
+      },
+      {
+        "nazwa": "Odcinek dopiero po całej grupie",
+        "wejscie": [
+          {
+            "id": "P1",
+            "start": 2,
+            "end": 5
+          },
+          {
+            "id": "P2",
+            "start": 5,
+            "end": 8
+          }
+        ],
+        "oczekiwane": [
+          {
+            "start": 5,
+            "end": 8,
+            "aktywne": 1
+          }
+        ],
+        "rzeczywiste": [
+          {
+            "start": 5,
+            "end": 8,
+            "aktywne": 1
+          }
+        ],
+        "status": "PASS"
+      },
+      {
+        "nazwa": "Stan pośredni Insertion Sort",
+        "wejscie": "[8,1,4] — po pierwszym wstawieniu",
+        "oczekiwane": [
+          1,
+          8,
+          4
+        ],
+        "rzeczywiste": [
+          1,
+          8,
+          4
+        ],
+        "status": "PASS"
+      },
+      {
+        "nazwa": "Dokładne liczniki sortowania",
+        "wejscie": [
+          8,
+          1,
+          4
+        ],
+        "oczekiwane": {
+          "porownania": 3,
+          "przesuniecia": 2
+        },
+        "rzeczywiste": {
+          "porownania": 3,
+          "przesuniecia": 2
+        },
+        "status": "PASS"
+      },
+      {
+        "nazwa": "Algorytmy nie zmieniają wejścia",
+        "wejscie": "[{\"id\":\"P1\",\"start\":1,\"end\":4},{\"id\":\"P2\",\"start\":2,\"end\":5},{\"id\":\"P3\",\"start\":5,\"end\":7}]",
+        "oczekiwane": "[{\"id\":\"P1\",\"start\":1,\"end\":4},{\"id\":\"P2\",\"start\":2,\"end\":5},{\"id\":\"P3\",\"start\":5,\"end\":7}]",
+        "rzeczywiste": "[{\"id\":\"P1\",\"start\":1,\"end\":4},{\"id\":\"P2\",\"start\":2,\"end\":5},{\"id\":\"P3\",\"start\":5,\"end\":7}]",
+        "status": "PASS"
+      },
+      {
+        "nazwa": "Historia domyślnie wyłączona",
+        "wejscie": [
+          {
+            "id": "P1",
+            "start": 1,
+            "end": 4
+          },
+          {
+            "id": "P2",
+            "start": 2,
+            "end": 5
+          },
+          {
+            "id": "P3",
+            "start": 5,
+            "end": 7
+          }
+        ],
+        "oczekiwane": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "rzeczywiste": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "status": "PASS"
+      },
+      {
+        "nazwa": "Historia nie zmienia wyniku",
+        "wejscie": [
+          {
+            "id": "P1",
+            "start": 1,
+            "end": 4
+          },
+          {
+            "id": "P2",
+            "start": 2,
+            "end": 5
+          },
+          {
+            "id": "P3",
+            "start": 5,
+            "end": 7
+          }
+        ],
+        "oczekiwane": {
+          "maksimum": 2,
+          "odcinki": [
+            {
+              "start": 2,
+              "end": 4
+            }
+          ]
+        },
+        "rzeczywiste": {
+          "maksimum": 2,
+          "odcinki": [
+            {
+              "start": 2,
+              "end": 4
+            }
+          ]
+        },
+        "status": "PASS"
+      },
+      {
+        "nazwa": "Liczniki podstawowe",
+        "wejscie": [
+          {
+            "id": "P1",
+            "start": 1,
+            "end": 4
+          },
+          {
+            "id": "P2",
+            "start": 2,
+            "end": 5
+          },
+          {
+            "id": "P3",
+            "start": 5,
+            "end": 7
+          }
+        ],
+        "oczekiwane": {
+          "pary": 3,
+          "jednostki": 300,
+          "zdarzenia": 6
+        },
+        "rzeczywiste": {
+          "pary": 3,
+          "jednostki": 300,
+          "zdarzenia": 6
+        },
+        "status": "PASS"
+      },
+      {
+        "nazwa": "Wyczerpująca zgodność metod",
+        "wejscie": "1555 zestawów, granice 0..3, n=0..4",
+        "oczekiwane": true,
+        "rzeczywiste": true,
+        "status": "PASS"
+      },
+      {
+        "nazwa": "Pełny zakres: obciążenia, maksima i długość pokrycia",
+        "wejscie": "300 powtarzalnych zestawów; n=0..30; granice 0..100; ziarno 17",
+        "oczekiwane": true,
+        "rzeczywiste": true,
+        "status": "PASS"
+      },
+      {
+        "nazwa": "Dokładna para z karty",
+        "wejscie": [
+          {
+            "id": "A",
+            "start": 1,
+            "end": 4
+          },
+          {
+            "id": "B",
+            "start": 2,
+            "end": 5
+          },
+          {
+            "id": "C",
+            "start": 5,
+            "end": 7
+          }
+        ],
+        "oczekiwane": [
+          {
+            "id1": "A",
+            "id2": "B",
+            "start": 2,
+            "end": 4
+          }
+        ],
+        "rzeczywiste": [
+          {
+            "id1": "A",
+            "id2": "B",
+            "start": 2,
+            "end": 4
+          }
+        ],
+        "status": "PASS"
+      },
+      {
+        "nazwa": "Liczniki dla n=5",
+        "wejscie": "5 x [0,100)",
+        "oczekiwane": {
+          "maksimum": 5,
+          "sprawdzenia": 500,
+          "zdarzenia": 10
+        },
+        "rzeczywiste": {
+          "maksimum": 5,
+          "sprawdzenia": 500,
+          "zdarzenia": 10
+        },
+        "status": "PASS"
+      },
+      {
+        "nazwa": "Liczniki dla n=15",
+        "wejscie": "15 x [0,100)",
+        "oczekiwane": {
+          "maksimum": 15,
+          "sprawdzenia": 1500,
+          "zdarzenia": 30
+        },
+        "rzeczywiste": {
+          "maksimum": 15,
+          "sprawdzenia": 1500,
+          "zdarzenia": 30
+        },
+        "status": "PASS"
+      },
+      {
+        "nazwa": "Liczniki dla n=30",
+        "wejscie": "30 x [0,100)",
+        "oczekiwane": {
+          "maksimum": 30,
+          "sprawdzenia": 3000,
+          "zdarzenia": 60
+        },
+        "rzeczywiste": {
+          "maksimum": 30,
+          "sprawdzenia": 3000,
+          "zdarzenia": 60
+        },
+        "status": "PASS"
+      },
+      {
+        "nazwa": "Historia sortowania zachowuje wcześniejszy stan",
+        "wejscie": "[8,1,4] — początkowy stan po całym sortowaniu",
+        "oczekiwane": [
+          {
+            "id": "P1",
+            "start": 8,
+            "end": 9
+          },
+          {
+            "id": "P2",
+            "start": 1,
+            "end": 2
+          },
+          {
+            "id": "P3",
+            "start": 4,
+            "end": 5
+          }
+        ],
+        "rzeczywiste": [
+          {
+            "id": "P1",
+            "start": 8,
+            "end": 9
+          },
+          {
+            "id": "P2",
+            "start": 1,
+            "end": 2
+          },
+          {
+            "id": "P3",
+            "start": 4,
+            "end": 5
+          }
+        ],
+        "status": "PASS"
+      }
+    ]
+  },
+  "kontroleUI": [
+    {
+      "test": "przykład karty maksimum",
+      "expected": "2",
+      "actual": "2",
+      "pass": true
+    },
+    {
+      "test": "przykład karty paski",
+      "expected": [
+        [
+          "2%",
+          "2%"
+        ]
+      ],
+      "actual": [
+        [
+          "2%",
+          "2%"
+        ]
+      ],
+      "pass": true
+    },
+    {
+      "test": "rozłączne maksimum",
+      "expected": "2",
+      "actual": "2",
+      "pass": true
+    },
+    {
+      "test": "rozłączne paski",
+      "expected": [
+        [
+          "20%",
+          "10%"
+        ],
+        [
+          "70%",
+          "10%"
+        ]
+      ],
+      "actual": [
+        [
+          "20%",
+          "10%"
+        ],
+        [
+          "70%",
+          "10%"
+        ]
+      ],
+      "pass": true
+    },
+    {
+      "test": "styk maksimum",
+      "expected": "1",
+      "actual": "1",
+      "pass": true
+    },
+    {
+      "test": "styk paski",
+      "expected": [
+        [
+          "1%",
+          "6%"
+        ]
+      ],
+      "actual": [
+        [
+          "1%",
+          "6%"
+        ]
+      ],
+      "pass": true
+    },
+    {
+      "test": "puste maksimum",
+      "expected": "0",
+      "actual": "0",
+      "pass": true
+    },
+    {
+      "test": "puste paski",
+      "expected": [],
+      "actual": [],
+      "pass": true
+    },
+    {
+      "test": "puste komunikat",
+      "expected": "Brak odcinków maksimum",
+      "actual": "Brak odcinków maksimum",
+      "pass": true
+    },
+    {
+      "test": "Reset zachowuje maksimum",
+      "expected": {
+        "max": "2",
+        "bars": [
+          [
+            "20%",
+            "10%"
+          ],
+          [
+            "70%",
+            "10%"
+          ]
+        ],
+        "text": "Odcinki końcowego maksimum: [20, 30), [70, 80)."
+      },
+      "actual": {
+        "max": "2",
+        "bars": [
+          [
+            "20%",
+            "10%"
+          ],
+          [
+            "70%",
+            "10%"
+          ]
+        ],
+        "text": "Odcinki końcowego maksimum: [20, 30), [70, 80)."
+      },
+      "pass": true
+    },
+    {
+      "test": "walidacja błędnego zakresu",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "test": "błędne dane nie zmieniają wyniku",
+      "expected": {
+        "max": "2",
+        "bars": [
+          [
+            "20%",
+            "10%"
+          ],
+          [
+            "70%",
+            "10%"
+          ]
+        ],
+        "text": "Odcinki końcowego maksimum: [20, 30), [70, 80)."
+      },
+      "actual": {
+        "max": "2",
+        "bars": [
+          [
+            "20%",
+            "10%"
+          ],
+          [
+            "70%",
+            "10%"
+          ]
+        ],
+        "text": "Odcinki końcowego maksimum: [20, 30), [70, 80)."
+      },
+      "pass": true
+    },
+    {
+      "test": "zgodność metod n=5",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "test": "zgodność metod n=15",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "test": "zgodność metod n=30",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    }
+  ],
+  "porownanie": [
+    {
+      "n": 5,
+      "dane": [
+        {
+          "id": "P1",
+          "start": 7,
+          "end": 11
+        },
+        {
+          "id": "P2",
+          "start": 24,
+          "end": 39
+        },
+        {
+          "id": "P3",
+          "start": 41,
+          "end": 67
+        },
+        {
+          "id": "P4",
+          "start": 58,
+          "end": 95
+        },
+        {
+          "id": "P5",
+          "start": 75,
+          "end": 98
+        }
+      ],
+      "maksimumZdarzeniami": 2,
+      "maksimumJednostkami": 2,
+      "odcinki": [
+        {
+          "start": 58,
+          "end": 67
+        },
+        {
+          "start": 75,
+          "end": 95
+        }
+      ],
+      "zgodne": true,
+      "utworzoneZdarzenia": 10,
+      "kopiowaneZdarzenia": 10,
+      "porownaniaSortowania": 11,
+      "przesunieciaSortowania": 2,
+      "wstawieniaSortowania": 9,
+      "przetworzoneZdarzenia": 10,
+      "odcinkiSkanuMaksimum": 9,
+      "sprawdzeniaJednostek": 500,
+      "zapisaneJednostki": 100,
+      "jednostkiSkanuMaksimum": 100
+    },
+    {
+      "n": 15,
+      "dane": [
+        {
+          "id": "P1",
+          "start": 7,
+          "end": 11
+        },
+        {
+          "id": "P2",
+          "start": 24,
+          "end": 39
+        },
+        {
+          "id": "P3",
+          "start": 41,
+          "end": 67
+        },
+        {
+          "id": "P4",
+          "start": 58,
+          "end": 95
+        },
+        {
+          "id": "P5",
+          "start": 75,
+          "end": 98
+        },
+        {
+          "id": "P6",
+          "start": 2,
+          "end": 61
+        },
+        {
+          "id": "P7",
+          "start": 19,
+          "end": 89
+        },
+        {
+          "id": "P8",
+          "start": 36,
+          "end": 53
+        },
+        {
+          "id": "P9",
+          "start": 53,
+          "end": 98
+        },
+        {
+          "id": "P10",
+          "start": 70,
+          "end": 83
+        },
+        {
+          "id": "P11",
+          "start": 87,
+          "end": 97
+        },
+        {
+          "id": "P12",
+          "start": 14,
+          "end": 53
+        },
+        {
+          "id": "P13",
+          "start": 31,
+          "end": 98
+        },
+        {
+          "id": "P14",
+          "start": 48,
+          "end": 91
+        },
+        {
+          "id": "P15",
+          "start": 65,
+          "end": 83
+        }
+      ],
+      "maksimumZdarzeniami": 8,
+      "maksimumJednostkami": 8,
+      "odcinki": [
+        {
+          "start": 75,
+          "end": 83
+        }
+      ],
+      "zgodne": true,
+      "utworzoneZdarzenia": 30,
+      "kopiowaneZdarzenia": 30,
+      "porownaniaSortowania": 184,
+      "przesunieciaSortowania": 156,
+      "wstawieniaSortowania": 29,
+      "przetworzoneZdarzenia": 30,
+      "odcinkiSkanuMaksimum": 24,
+      "sprawdzeniaJednostek": 1500,
+      "zapisaneJednostki": 100,
+      "jednostkiSkanuMaksimum": 100
+    },
+    {
+      "n": 30,
+      "dane": [
+        {
+          "id": "P1",
+          "start": 7,
+          "end": 11
+        },
+        {
+          "id": "P2",
+          "start": 24,
+          "end": 39
+        },
+        {
+          "id": "P3",
+          "start": 41,
+          "end": 67
+        },
+        {
+          "id": "P4",
+          "start": 58,
+          "end": 95
+        },
+        {
+          "id": "P5",
+          "start": 75,
+          "end": 98
+        },
+        {
+          "id": "P6",
+          "start": 2,
+          "end": 61
+        },
+        {
+          "id": "P7",
+          "start": 19,
+          "end": 89
+        },
+        {
+          "id": "P8",
+          "start": 36,
+          "end": 53
+        },
+        {
+          "id": "P9",
+          "start": 53,
+          "end": 98
+        },
+        {
+          "id": "P10",
+          "start": 70,
+          "end": 83
+        },
+        {
+          "id": "P11",
+          "start": 87,
+          "end": 97
+        },
+        {
+          "id": "P12",
+          "start": 14,
+          "end": 53
+        },
+        {
+          "id": "P13",
+          "start": 31,
+          "end": 98
+        },
+        {
+          "id": "P14",
+          "start": 48,
+          "end": 91
+        },
+        {
+          "id": "P15",
+          "start": 65,
+          "end": 83
+        },
+        {
+          "id": "P16",
+          "start": 82,
+          "end": 89
+        },
+        {
+          "id": "P17",
+          "start": 9,
+          "end": 98
+        },
+        {
+          "id": "P18",
+          "start": 26,
+          "end": 69
+        },
+        {
+          "id": "P19",
+          "start": 43,
+          "end": 74
+        },
+        {
+          "id": "P20",
+          "start": 60,
+          "end": 73
+        },
+        {
+          "id": "P21",
+          "start": 77,
+          "end": 94
+        },
+        {
+          "id": "P22",
+          "start": 4,
+          "end": 47
+        },
+        {
+          "id": "P23",
+          "start": 21,
+          "end": 30
+        },
+        {
+          "id": "P24",
+          "start": 38,
+          "end": 47
+        },
+        {
+          "id": "P25",
+          "start": 55,
+          "end": 98
+        },
+        {
+          "id": "P26",
+          "start": 72,
+          "end": 99
+        },
+        {
+          "id": "P27",
+          "start": 89,
+          "end": 93
+        },
+        {
+          "id": "P28",
+          "start": 16,
+          "end": 65
+        },
+        {
+          "id": "P29",
+          "start": 33,
+          "end": 77
+        },
+        {
+          "id": "P30",
+          "start": 50,
+          "end": 73
+        }
+      ],
+      "maksimumZdarzeniami": 15,
+      "maksimumJednostkami": 15,
+      "odcinki": [
+        {
+          "start": 60,
+          "end": 61
+        }
+      ],
+      "zgodne": true,
+      "utworzoneZdarzenia": 60,
+      "kopiowaneZdarzenia": 60,
+      "porownaniaSortowania": 856,
+      "przesunieciaSortowania": 798,
+      "wstawieniaSortowania": 59,
+      "przetworzoneZdarzenia": 60,
+      "odcinkiSkanuMaksimum": 46,
+      "sprawdzeniaJednostek": 3000,
+      "zapisaneJednostki": 100,
+      "jednostkiSkanuMaksimum": 100
+    }
+  ],
+  "viewport": {
+    "width": 1200,
+    "height": 914
+  }
+}

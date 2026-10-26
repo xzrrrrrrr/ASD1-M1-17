@@ -1,0 +1,108 @@
+{
+  "kod": "Ostatnia kopia z komentarzami; działanie zgodne z MAKSIMUM.",
+  "prezentacja": "Ostatnia wersja z łatwiejszymi nazwami; slajd 9 o OpenClaw.",
+  "dokumentacja": "Ostatni raport 10 stron i źródło DOCX; zmieniono tylko ścieżkę raportu.",
+  "pliki": [
+    {
+      "plik": "index.html",
+      "zrodlo": "ASD1-M1-17-KOMENTARZE/index.html",
+      "sha256": "2a283683a578f3e34969af3b7352da569e1905151285f83b8aff466a9e18b10b"
+    },
+    {
+      "plik": "style.css",
+      "zrodlo": "ASD1-M1-17-KOMENTARZE/style.css",
+      "sha256": "b696849ad58c087ba1cd7e5e463fd1c110e502fa2bf2d26cf6152129036de137"
+    },
+    {
+      "plik": "algorithms.js",
+      "zrodlo": "ASD1-M1-17-KOMENTARZE/algorithms.js",
+      "sha256": "e0804c86f57de9d9567aafea9d867f966824dde76783ecf6ca27bc7c29a46d54"
+    },
+    {
+      "plik": "animation.js",
+      "zrodlo": "ASD1-M1-17-KOMENTARZE/animation.js",
+      "sha256": "6be720c9ee815967dad5f656a3edf683e564d665de5c82292738dd7028acff7b"
+    },
+    {
+      "plik": "comparison.js",
+      "zrodlo": "ASD1-M1-17-KOMENTARZE/comparison.js",
+      "sha256": "a3227b84529c3fa3d32402b713f3bddff7100cea970e2344d8c1ddbc2e7b6c33"
+    },
+    {
+      "plik": "education.js",
+      "zrodlo": "ASD1-M1-17-KOMENTARZE/education.js",
+      "sha256": "34ea50668fbac94ee2e6401194e39d9cf00311fff5a3531f6fe098d56c5d0f7c"
+    },
+    {
+      "plik": "script.js",
+      "zrodlo": "ASD1-M1-17-KOMENTARZE/script.js",
+      "sha256": "0d1c8ac8f6538c1195bd4a416bb54649e955280b67f0810da110f072c1c4dd69"
+    },
+    {
+      "plik": "tests.html",
+      "zrodlo": "ASD1-M1-17-KOMENTARZE/tests.html",
+      "sha256": "16797ceaeaeda9b17620bad63d9f122106c1530681f14e9e2f678b05b57785e2"
+    },
+    {
+      "plik": "tests.js",
+      "zrodlo": "ASD1-M1-17-KOMENTARZE/tests.js",
+      "sha256": "fce664e32b497d08d265b57c68910d8da861b44de050176c6d2e236b325b6b39"
+    },
+    {
+      "plik": "prezentacja.pptx",
+      "zrodlo": "ASD1-M1-17-LATWIEJSZE-NAZWY/prezentacja.pptx",
+      "sha256": "fa7ec6f4eaf8d8fab3a37b445a4a36d7f2f24c589fc424a219b2c0e52a14e6d3"
+    },
+    {
+      "plik": "prezentacja.pdf",
+      "zrodlo": "ASD1-M1-17-LATWIEJSZE-NAZWY/prezentacja.pdf",
+      "sha256": "09733140ac2d008477aa8867ba5a4a2d36fa262f829ac0023460d7a690b8f57c"
+    },
+    {
+      "plik": "DOKUMENTACJA.docx",
+      "zrodlo": "ASD1-M1-17-DOKUMENTACJA-2026-10-26/DOKUMENTACJA.docx",
+      "sha256": "c672f98f8e53d958a366db8358c8d817e6aab137e422f8bb78d61941cb33d46a"
+    },
+    {
+      "plik": "DOKUMENTACJA.md",
+      "zrodlo": "ASD1-M1-17-DOKUMENTACJA-2026-10-26/DOKUMENTACJA.md",
+      "sha256": "2632988220889d6005cbe49a25b4c12fa4e16321f209fe299d19abc8fd4bbf42"
+    },
+    {
+      "plik": "README.md",
+      "zrodlo": "ASD1-M1-17-DOKUMENTACJA-2026-10-26/README.md",
+      "sha256": "5585061d00487fb2e562171a1704409046c4dda5dd5bd37406b9336120841ef4"
+    },
+    {
+      "plik": "materialy/KARTA-ZADANIA.html",
+      "zrodlo": "ASD1-M1-17-DOKUMENTACJA-2026-10-26/materialy/KARTA-ZADANIA.html",
+      "sha256": "e4a81dcd7776df766852ba9e1fd88747434f1c028fcce79fe743e7c699eb0da7"
+    },
+    {
+      "plik": "materialy-dokumentacji/ANIMACJA.png",
+      "zrodlo": "ASD1-M1-17-DOKUMENTACJA-2026-10-26/materialy-dokumentacji/ANIMACJA.png",
+      "sha256": "35a66916ee72c8acf4184cd14110b80e606783d0e63ff98e43c3b44623c0eaa7"
+    },
+    {
+      "plik": "materialy-dokumentacji/MAKSIMUM.png",
+      "zrodlo": "ASD1-M1-17-DOKUMENTACJA-2026-10-26/materialy-dokumentacji/MAKSIMUM.png",
+      "sha256": "74b6a3cb6f9c5cec702e8672b0bc51238e810db15a263a6dccd1054c43e4aeaa"
+    },
+    {
+      "plik": "materialy/ANIMACJA-V2.png",
+      "zrodlo": "ASD1-M1-17-PREZENTACJA-V2/materialy/ANIMACJA-V2.png",
+      "sha256": "bba5e2eb4753a03d5e985cf17de939892fc0b40ce76ad93cd121dfac90d68bc5"
+    },
+    {
+      "plik": "materialy/MAKSIMUM-V2.png",
+      "zrodlo": "ASD1-M1-17-PREZENTACJA-V2/materialy/MAKSIMUM-V2.png",
+      "sha256": "8e81d8cbf1cc519791def5fa5b9a88d5c5702ae2f3a40d31d33b9272cd89f874"
+    },
+    {
+      "plik": "weryfikacja/dokumentacja/WYNIKI-NOWE.json",
+      "zrodlo": "ASD1-M1-17-DOKUMENTACJA-2026-10-26/weryfikacja-dokumentacji/WYNIKI-NOWE.json",
+      "sha256": "378cc5b55b9429548b60b7b14d0d4d42136fe355829699382153f61361ccfa32"
+    }
+  ],
+  "uwaga": "W notatce slajdu 5 powtórzono słowo „par”; nie zmieniono prezentacji. Slajd ma poprawny wynik 6 par i 4 naraz."
+}

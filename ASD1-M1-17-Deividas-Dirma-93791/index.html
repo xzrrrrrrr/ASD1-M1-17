@@ -1,0 +1,143 @@
+<!--
+Plik index.html: struktura aplikacji. Obliczenia i obsługa są w lokalnych skryptach JS.
+--><!DOCTYPE html>
+<html lang="pl">
+<!--
+Metadane i lokalny arkusz wyglądu; aplikacja nie potrzebuje zasobów z internetu.
+--><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rezerwacje sali — ASD1-M1-17</title><link rel="stylesheet" href="style.css"></head>
+<body><main>
+<!--
+Nagłówek: nazwa przykładu zastosowania przedziałów.
+--><header><h1>Rezerwacje sali</h1><p>Sprawdź, kiedy rezerwacje się nakładają.</p></header>
+<!--
+Gotowe dane: wybór niczego nie zapisuje trwale; przycisk Wczytaj zastępuje bieżącą listę.
+--><section class="scenariusze" aria-label="Przykład">
+<label for="scenariusz">Przykład</label><div class="wybor-scenariusza">
+<select id="scenariusz"><option value="1">Prosty przykład — nakładanie i styk</option><option value="2">Zagnieżdżenia i identyczne granice</option><option value="3">Dwa oddzielne odcinki maksimum</option></select>
+<button id="wczytaj-scenariusz" type="button">Wczytaj</button></div></section>
+<!--
+Dane użytkownika: formularz, komunikaty walidacji i tabela z edycją/usuwaniem.
+--><details id="edycja-danych"><summary>Edytuj dane</summary>
+<h2>Rezerwacje <span id="liczba-przedzialow">0 / 30</span></h2>
+<p>Całkowite granice: 0 ≤ start &lt; end ≤ 100. ID są unikalne.</p>
+                <form id="formularz-przedzialu" novalidate>
+                    <h3 id="tytul-formularza">Dodaj przedział</h3>
+                    <label for="id-przedzialu">ID — nadawane automatycznie</label>
+                    <input id="id-przedzialu" type="text" readonly>
+                    <div class="granice">
+                        <div>
+                            <label for="start">Początek</label>
+                            <input id="start" name="start" type="number" min="0" max="99" step="1" required>
+                        </div>
+                        <div>
+                            <label for="end">Koniec</label>
+                            <input id="end" name="end" type="number" min="1" max="100" step="1" required>
+                        </div>
+                    </div>
+                    <div class="przyciski-formularza">
+                        <button id="zapisz-przedzial" type="submit">Dodaj przedział</button>
+                        <button id="anuluj-edycje" class="drugorzedny" type="button" hidden>Anuluj edycję</button>
+                    </div>
+                </form>
+                <p id="komunikat" class="komunikat" role="status" aria-live="polite"></p>
+
+                <div class="tabela-danych">
+                    <table>
+                        <caption class="tylko-czytnik">Lista przedziałów z przyciskami edycji i usuwania</caption>
+                        <thead><tr><th scope="col">ID</th><th scope="col">Przedział</th><th scope="col">Działania</th></tr></thead>
+                        <tbody id="lista-przedzialow"></tbody>
+                    </table>
+                </div>
+                <p id="pusta-lista" hidden>Brak przedziałów. Dodaj pierwszy powyżej.</p>
+                <p class="pomoc">Dane są tylko w pamięci strony. Odświeżenie przywraca pierwszy scenariusz.</p>
+
+</details>
+<!--
+Wybór jednego z pięciu sposobów analizy; zmiana przygotowuje nowy przebieg.
+--><section class="metoda" aria-label="Wybór metody">
+<label for="algorytm">Co chcesz sprawdzić?</label>
+<select id="algorytm">
+<option value="konflikty">Nakładanie rezerwacji (konflikty)</option>
+<option value="laczenie">Łączny zajęty czas (pokrycie)</option>
+<option value="zdarzenia">Początki i końce (zdarzenia)</option>
+<option value="maksimum">Najwięcej rezerwacji naraz (maksimum)</option>
+<option value="jednostki">Kontrola jednostka po jednostce</option></select>
+<p class="pomoc">[1,4) oznacza: od 1 włącznie do 4 bez tej chwili. Oś pokazuje jednostki czasu, nie godziny zegarowe.</p></section>
+<!--
+Bieżący krok: osobna oś, sterowanie, pseudokod i zmienne; to nie jest końcowy wynik.
+--><section aria-label="Bieżący stan animacji">
+<div class="przewijanie-osi" tabindex="0" role="region" aria-label="Oś bieżącego kroku 0–100"><div id="os-animacji" class="os-czasu"></div></div>
+<!--
+Krok, Start/Pauza, Reset i odstęp między zapisami historii.
+--><div class="sterowanie"><button id="krok" type="button">Krok →</button><button id="start-pauza" type="button">Start</button><button id="reset-animacji" type="button" class="drugorzedny">Reset</button>
+<div><label for="tempo">Czas jednego kroku</label><select id="tempo"><option value="2000">Wolno — 2 s</option><option value="800" selected>Normalnie — 0,8 s</option><option value="200">Szybko — 0,2 s</option></select></div></div>
+<p id="status-animacji" role="status" aria-live="polite"></p><p id="opis-kroku" class="wynik-tekstowy"></p>
+<!--
+Pseudokod jest powiązany z polem linia zapisanym w historii algorytmu.
+--><div class="krok-szczegoly"><div><h3 id="etap-animacji">Pseudokod</h3><ol id="pseudokod"></ol></div><div><h3>Zmienne bieżącego kroku</h3><pre id="zmienne-kroku"></pre></div></div>
+<p id="aktywne-kroku" class="pomoc"></p>
+<details><summary>Pełny zapis stanu i oznaczenia</summary><pre id="pelny-stan">Brak wykonanego kroku.</pre>
+<p>▶ i obramowanie oznaczają rozpatrywaną rezerwację. Pas z podpisem oznacza badany odcinek; pionowa kreska — czas zdarzenia.</p>
+<p>„Aktywne” w częściowym kroku nie zawsze oznacza obciążenie całego odcinka: przy zdarzeniach trzeba zakończyć grupę tego samego czasu, a przy jednostkach sprawdzić wszystkie przedziały.</p>
+<p>Reset cofa animację, nie usuwa danych. Zmiana danych lub metody zatrzymuje i resetuje przebieg.</p></details></section>
+<!--
+Pełna odpowiedź dla wszystkich danych, niezależna od pozycji animacji; zawiera osobną oś maksimum.
+--><details id="wynik-koncowy"><summary>Wynik końcowy</summary><p>Pełny wynik dla bieżących danych — niezależny od stanu animacji.</p>
+<p>Konfliktujące pary: <strong id="liczba-konfliktow"></strong> · Łączny zajęty czas: <strong id="dlugosc-pokrycia"></strong> · Maksimum: <strong id="wartosc-maksimum"></strong></p>
+<div class="przewijanie-osi" tabindex="0" role="region" aria-label="Oś końcowego maksimum 0–100"><div id="os-maksimum" class="os-czasu"></div></div>
+<p id="odcinki-maksimum"></p>
+<p class="pomoc">Kreskowane pasy oznaczają końcowe maksimum. Badany odcinek na osi animacji pokazuje tylko bieżący krok — nie zawsze jest maksimum.</p>
+<h2 id="nazwa-wyniku"></h2><p id="opis-metody"></p><p id="podsumowanie-wyniku" class="wynik-tekstowy" aria-live="polite"></p><div id="szczegoly-wyniku" class="tabela-wynikow"></div></details>
+<!--
+Trzy pytania: dwa o pojęcia, trzecie o licznik z rzeczywiście widocznego kroku.
+--><details id="pytania"><summary>3 pytania</summary>            <details><summary>1. Czy koniec A i początek B w tej samej chwili tworzą konflikt?</summary>
+                <p>Nie. Przedziały są półotwarte [start,end), a warunek konfliktu to lewa &lt; prawa.
+                Przy styku lewa = prawa. W pokryciu łączymy styki, bo nie ma między nimi przerwy.</p></details>
+            <details><summary>2. Czy liczbę par konfliktów można porównać z maksimum aktywnych?</summary>
+                <p>Nie. To różne wielkości. Dla trzech identycznych przedziałów są 3 pary i maksimum 3,
+                ale dla czterech są już 6 par i maksimum 4. Porównujemy maksimum zdarzeniami z maksimum jednostkami.</p></details>
+            <p id="pytanie-stanu"></p>
+            <label for="odpowiedz-stanu">Twoja odpowiedź: wartość aktywne</label>
+            <input id="odpowiedz-stanu" type="number" min="0" max="30" step="1">
+            <button id="sprawdz-odpowiedz" type="button">Sprawdź odpowiedź</button>
+            <p id="ocena-odpowiedzi" role="status" aria-live="polite"></p>
+</details>
+<!--
+Osobny generator 5/15/30, liczniki operacji i osadzona strona automatycznych testów.
+--><details id="porownanie"><summary>Porównanie i testy</summary><h2>Metody maksimum — 5, 15 i 30 przedziałów</h2>            <p>Powtarzalny zbiór: start = (17i+7) % 90, end = start+1+(11i+3) % (100-start), i=0…n−1.
+            To osobne dane do porównania, nie bieżąca lista formularza. Pomiary poniżej to liczby operacji, nie milisekundy.</p>
+            <div class="tabela-wynikow"><table>
+                <caption>Oddzielne liczniki przygotowania, sortowania i przejścia. Wszystkie obliczenia bez historii.</caption>
+                <thead><tr><th>n</th><th>Maksimum zdarzenia / jednostki</th><th>Utworzone zdarzenia</th><th>Kopie zdarzeń</th><th>Porównania sort.</th><th>Przesunięcia sort.</th><th>Wstawienia sort.</th><th>Przetworzone zdarzenia</th><th>Odcinki skanu maksimum</th><th>Sprawdzenia przedziału</th><th>Zapisane jednostki</th><th>Skan maksimum jednostek</th><th>Zgodność maksimum i odcinków</th></tr></thead>
+                <tbody id="wiersze-porownania"></tbody>
+            </table></div>
+            <p class="pomoc">Sprawdzenie przedziału: jeden warunek start ≤ t &lt; end (100n razy).
+            Przetworzenie zdarzenia: jedna aktualizacja licznika (2n razy).
+            Porównanie sortowania: jedna decyzja o przesunięciu. Przesunięcie: jedno przypisanie w prawo.
+            Wstawienie: zapis klucza po pętli (2n−1). Tworzenie i kopiowanie podają liczbę obiektów;
+            skan maksimum podaje liczbę badanych odcinków. Nie sumujemy różnych rodzajów operacji w „czas”.
+            Walidacja, historia, DOM i zegar są poza porównaniem. Zdarzenia wymagają tu O(n²) czasu przez Insertion Sort,
+            jednostki O(100n+100). Mniej aktualizacji licznika nie dowodzi krótszego czasu całej metody.</p>
+            <button id="przelicz-porownanie" type="button">Przelicz porównanie</button>
+            <details><summary>Automatyczne testy — wejście, oczekiwanie i wynik</summary><iframe title="Automatyczne testy" src="tests.html" loading="lazy"></iframe></details>
+</details>
+            <!--
+Wyjaśnienia metod i oddzielne koszty algorytmów, walidacji oraz historii.
+--><details><summary>Cel, zastosowania i ograniczenia pięciu metod</summary>
+                <ul>
+                    <li>Konflikty: badanie każdej pary pozwala wskazać kolidujące rezerwacje, nie samo obciążenie. Koszt O(n²), wynik może mieć O(n²) par.</li>
+                    <li>Łączenie: sortujemy kopię i wydłużamy pokrycie, aby policzyć zajęty czas. Łączymy styki; tracimy informację o osobnych ID. Czas O(n²), pamięć O(n).</li>
+                    <li>Zdarzenia: tworzymy +1/−1, sortujemy i zmieniamy licznik, aby badać obciążenie. Kolejność remisów i grupowanie czasu są istotne. Czas O(n²), pamięć O(n).</li>
+                    <li>Maksimum: skanujemy obciążenia między zdarzeniami, zachowując wszystkie odcinki największego obciążenia. Sam skan O(n); pełna metoda z Insertion Sort O(n²), pamięć O(n).</li>
+                    <li>Jednostki: sprawdzamy każdy przedział w każdej z T=100 jednostek; prosta kontrola maksimum, dokładna tylko dla całkowitych granic. Czas O(Tn+T), pamięć O(T).</li>
+                </ul>
+                <p>Koszty powyżej nie obejmują animacji ani walidatora. Walidacja unikalności ID ma O(n²).
+                Historia sortowania przechowuje kopie tablic i w najgorszym przypadku kosztuje O(n³) czasu i pamięci.
+                Renderowanie to osobny koszt: jedna klatka z tablicą sortowania ma O(n), a pełny pokaz może mieć O(n³).</p>
+            </details>
+
+</main>
+<!--
+Kolejność ma znaczenie: obliczenia i odtwarzacz są dostępne przed inicjalizacją w script.js.
+--><script src="algorithms.js"></script><script src="animation.js"></script><script src="education.js"></script><script src="comparison.js"></script><script src="script.js"></script></body></html>

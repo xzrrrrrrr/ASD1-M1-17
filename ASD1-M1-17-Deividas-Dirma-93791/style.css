@@ -1,0 +1,118 @@
+/* Jeden układ strony, zgodny z podglądem „najprostszy-uklad”. */
+/*
+Plik style.css: wygląd aplikacji i testów; nie steruje obliczeniami.
+Układ podstawowy: kolory, krój pisma i wspólny rozmiar elementów.
+*/:root { color-scheme: dark; font-family: Arial, sans-serif; color: #dae6df; background: #1b2b23; font-size: 16px; }
+* { box-sizing: border-box; }
+/*
+UKŁAD: tło, szerokość treści i odstępy strony.
+*/body { margin: 0; padding: 0 14px 28px; line-height: 1.5; }
+main { max-width: 936px; margin: 0 auto; padding: 28px 26px 30px; border-radius: 14px; background: #23372e; }
+h1 { margin: 0; font-size: 24px; font-weight: 500; letter-spacing: -.6px; }
+header { border-bottom: 1px solid #405348; padding-bottom: 18px; }
+header p { margin: 3px 0 0; color: #a7b9ad; }
+h2 { font-size: 18px; font-weight: 500; }
+h3 { font-size: 14px; margin: 0 0 10px; }
+p { margin: 12px 0; }
+/*
+FORMULARZE: wspólne etykiety, pola, przyciski i ich stany.
+*/label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 5px; }
+button, input, select { font: inherit; border: 1px solid #40594a; border-radius: 6px; padding: 9px 12px; min-height: 39px; }
+button { cursor: pointer; background: #9dd4b1; color: #193a28; }
+button:hover { background: #b5e5c6; }
+button:disabled { opacity: .5; cursor: default; }
+input, select, .drugorzedny { color: #dae6df; background: #192d24; }
+select { width: 100%; }
+:focus-visible { outline: 2px solid #dcebdd; outline-offset: 3px; }
+/*
+SCENARIUSZE: wybór danych i przycisk Wczytaj w jednym wierszu.
+*/.scenariusze { padding: 14px 0 12px; }
+.scenariusze label { padding-left: 10px; }
+.wybor-scenariusza { display: flex; gap: 10px; align-items: center; padding-left: 10px; }
+.wybor-scenariusza select { flex: 1; min-width: 0; }
+.wybor-scenariusza button { min-height: 45px; }
+/*
+ROZWIJANE SEKCJE: oddzielają szczegóły od głównego przebiegu.
+*/details { border-top: 1px solid #405348; padding: 15px 0; }
+summary { cursor: pointer; }
+details > :not(summary) { margin-top: 16px; }
+.metoda { margin-top: 28px; }
+.metoda .pomoc { margin: 19px 0 37px; }
+.pomoc { font-size: 13px; color: #b7c8bc; }
+/*
+OŚ CZASU: minimalna szerokość zachowuje czytelność; na małym ekranie przewijamy samą oś.
+*/.przewijanie-osi { overflow-x: auto; padding-bottom: 3px; }
+.os-czasu { min-width: 600px; }
+.wiersz-osi { display: grid; grid-template-columns: 173px minmax(0, 1fr); align-items: center; margin-bottom: 6px; min-height: 34px; }
+.etykieta-osi { font-size: 13px; padding-right: 8px; }
+.tor { position: relative; height: 34px; background: #192d24; border-left: 1px solid #809689; border-right: 1px solid #809689; }
+.znacznik-czasu { position: absolute; top: 0; font-size: 12px; transform: translateX(-50%); }
+.pasek { position: absolute; top: 6px; height: 22px; border-radius: 2px; min-width: 2px; }
+/*
+OZNACZENIA KROKU: obramowanie i kursor uzupełniają kolor wyróżnienia.
+*/.zwykly { background: #d2e9e6; border: 1px solid #aecfcb; }
+.aktywny-przedzial { outline: 2px solid #f2cd88; outline-offset: 2px; }
+.badany-odcinek { background: #e4c57a; color: #172d20; border: 2px dashed #fff0bf; }
+.kursor-kroku { position: absolute; top: 0; height: 100%; border-left: 3px solid #f2cd88; }
+/*
+STEROWANIE: przyciski przebiegu i wybór odstępu między krokami.
+*/.sterowanie { display: flex; flex-wrap: wrap; gap: 8px; align-items: flex-end; margin: 46px 0 16px; }
+.sterowanie button { min-height: 46px; }
+.sterowanie select { width: 181px; }
+#status-animacji { font-size: 13px; font-weight: 600; }
+.wynik-tekstowy { background: #34543e; border-radius: 6px; padding: 14px 12px; }
+/*
+STAN I PSEUDOKOD: dwie kolumny; wyróżnienie wskazuje wykonywaną linię.
+*/.krok-szczegoly { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; border-top: 1px solid #405348; padding-top: 20px; margin-top: 10px; }
+#aktywne-kroku { margin: 16px 0 26px; }
+pre { font: 14px/1.55 Arial, sans-serif; white-space: pre-wrap; overflow-wrap: anywhere; margin: 0; }
+#pelny-stan, .test-wynik pre { font-family: monospace; }
+ol { padding-left: 24px; margin: 0; }
+#pseudokod li { padding: 5px; font-size: 14px; }
+.aktywna-linia { background: #34543e; border-left: 3px solid #b5e5c6; font-weight: bold; }
+#pseudokod .aktywna-linia::marker { content: '▶ '; }
+#wynik-koncowy { margin-top: 16px; }
+#wynik-koncowy > p:first-of-type { font-weight: bold; }
+/*
+EDYCJA DANYCH: początek/koniec, działania na wpisie i przyciski formularza.
+*/.granice { display: flex; gap: 12px; }
+.granice > div { flex: 1; min-width: 0; }
+input { max-width: 100%; }
+.granice input { width: 100%; }
+.przyciski-formularza { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+.dzialania { display: flex; gap: 8px; flex-wrap: wrap; }
+.maly { font-size: 13px; padding: 5px 8px; }
+/*
+TABELE I TESTY: szerokie wyniki przewijają się we własnym obszarze.
+*/.tabela-danych, .tabela-wynikow { overflow-x: auto; max-width: 100%; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th, td { border-bottom: 1px solid #405348; padding: 10px; text-align: left; }
+th { font-weight: 600; }
+.blad, .test-fail { color: #ffb8af; }
+a { color: #b5e5c6; }
+iframe { width: 100%; height: 600px; border: 1px solid #405348; border-radius: 6px; }
+.test-wynik { padding: 16px 0; border-top: 1px solid #405348; }
+/*
+DOSTĘPNOŚĆ: opis pozostaje dla czytnika ekranu; hidden ukrywa element całkowicie.
+*/.tylko-czytnik { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+[hidden] { display: none !important; }
+/*
+WĄSKI EKRAN: mniejsze odstępy i jedna kolumna stanu; dane i algorytmy się nie zmieniają.
+*/@media (max-width: 600px) {
+ body { padding: 0 6px 12px; }
+ main { padding: 22px 14px; }
+ .krok-szczegoly { grid-template-columns: 1fr; gap: 20px; }
+ .wiersz-osi { grid-template-columns: 120px minmax(0, 1fr); }
+ .wybor-scenariusza { padding-left: 0; }
+ .scenariusze label { padding-left: 0; }
+ .sterowanie { margin-top: 28px; }
+ .granice { gap: 8px; }
+ th, td { padding: 8px 5px; }
+}
+
+/* Końcowe maksimum jest niezależne od badanego odcinka animacji. */
+.maksimum-koncowe { background: repeating-linear-gradient(135deg, #b5e5c6 0, #b5e5c6 4px, #34543e 4px, #34543e 8px); border: 2px solid #dcebdd; }
+#os-maksimum .wiersz-osi { grid-template-columns: 200px minmax(0, 1fr); }
+#os-maksimum .znacznik-czasu:first-child { transform: none; }
+#os-maksimum .znacznik-czasu:last-child { transform: translateX(-100%); }
+#odcinki-maksimum { overflow-wrap: anywhere; }

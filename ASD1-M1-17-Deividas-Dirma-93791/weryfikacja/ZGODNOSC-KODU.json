@@ -1,0 +1,32 @@
+[
+  {
+    "file": "algorithms.js",
+    "sameASTasMAKSIMUM": true,
+    "comments": 31
+  },
+  {
+    "file": "animation.js",
+    "sameASTasMAKSIMUM": true,
+    "comments": 32
+  },
+  {
+    "file": "comparison.js",
+    "sameASTasMAKSIMUM": true,
+    "comments": 8
+  },
+  {
+    "file": "education.js",
+    "sameASTasMAKSIMUM": true,
+    "comments": 5
+  },
+  {
+    "file": "script.js",
+    "sameASTasMAKSIMUM": true,
+    "comments": 34
+  },
+  {
+    "file": "tests.js",
+    "sameASTasMAKSIMUM": true,
+    "comments": 29
+  }
+]

@@ -1,0 +1,18 @@
+<!--
+Plik tests.html: samodzielna strona testowania. Wyświetla wejście, oczekiwanie, wynik i status.
+--><!DOCTYPE html>
+<html lang="pl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Testy — ASD1-M1-17</title><link rel="stylesheet" href="style.css"></head>
+<body><header class="naglowek"><div><h1>Automatyczne testy algorytmów</h1><p>ASD1-M1-17 · rzeczywiste wykonanie lokalne</p></div></header>
+<!--
+Wyniki testów i przycisk ponownego uruchomienia; listę wypełnia tests.js.
+--><main><section class="panel"><p><a href="index.html">← Powrót do aplikacji</a></p>
+<p>Każdy test pokazuje dane, oczekiwany i rzeczywisty wynik. Zestaw obejmuje wszystkie metody,
+walidację i konkretne stany pośrednie. Dwa testy zbiorcze porównują 1555 małych i 300 powtarzalnych zestawów.
+To kontrole wewnątrz testów, nie 1855 dodatkowych pozycji PASS.
+JSON pokazuje NaN i Infinity jako null; nazwane testy w tests.js zawierają rzeczywiste NaN/Infinity, nie null.</p>
+<button id="uruchom-testy" type="button">Uruchom testy ponownie</button>
+<p id="status-testow" role="status" aria-live="polite"></p><div id="wyniki-testow"></div>
+</section></main><!--
+Najpierw funkcje badane, potem testy. Formularz aplikacji nie jest potrzebny.
+--><script src="algorithms.js"></script><script src="tests.js"></script></body></html>

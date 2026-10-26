@@ -1,0 +1,18 @@
+{
+  "crcPierwszegoPakowania": true,
+  "wszystkiePlikiPierwszegoPakowaniaZgodnePoRozpakowaniu": true,
+  "uruchomienieRozpakowanejKopii": "PASS 46, FAIL 0; osobno 16/16 UI; file://; HTTP/HTTPS przez zamknięty proxy",
+  "ponowneWykonanieNieZwiekszaLiczbyTestow": true,
+  "plikiAplikacji": {
+    "index.html": "2a283683a578f3e34969af3b7352da569e1905151285f83b8aff466a9e18b10b",
+    "style.css": "b696849ad58c087ba1cd7e5e463fd1c110e502fa2bf2d26cf6152129036de137",
+    "algorithms.js": "e0804c86f57de9d9567aafea9d867f966824dde76783ecf6ca27bc7c29a46d54",
+    "script.js": "0d1c8ac8f6538c1195bd4a416bb54649e955280b67f0810da110f072c1c4dd69",
+    "animation.js": "6be720c9ee815967dad5f656a3edf683e564d665de5c82292738dd7028acff7b",
+    "comparison.js": "a3227b84529c3fa3d32402b713f3bddff7100cea970e2344d8c1ddbc2e7b6c33",
+    "education.js": "34ea50668fbac94ee2e6401194e39d9cf00311fff5a3531f6fe098d56c5d0f7c",
+    "tests.html": "16797ceaeaeda9b17620bad63d9f122106c1530681f14e9e2f678b05b57785e2",
+    "tests.js": "fce664e32b497d08d265b57c68910d8da861b44de050176c6d2e236b325b6b39"
+  },
+  "finalizacja": "Po wykonaniu z rozpakowanej kopii dodano raporty i sumy plików. Końcowy ZIP sprawdzono przez CRC i porównanie wszystkich plików po rozpakowaniu. Kod aplikacji i materiały są zgodne z uruchomioną kopią."
+}
